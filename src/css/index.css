@@ -3,7 +3,6 @@
 
 @import "tailwindcss";
 
-/* 👇 AGREGA ESTO */
 @theme {
   --font-cormorant: "Cormorant Garamond", serif;
   --font-montserrat: "Montserrat", sans-serif;

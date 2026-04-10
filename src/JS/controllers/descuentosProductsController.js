@@ -274,7 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Selecciona el footer y lo agrega dentro, o reemplaza el contenido existente
         const footer = document.getElementById("img_footer");
-        footer.innerHTML = "";
         footer.appendChild(imagenFooter);
     }
 

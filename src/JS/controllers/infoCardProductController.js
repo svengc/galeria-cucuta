@@ -25,13 +25,9 @@ menuBtn.addEventListener("click", () => {
         menuP.textContent = "Menú";
     } else {
         menuP.textContent = "";
+        menuP.classList.add("animate-pulse");
     }
-
-
-
 });
-
-
 const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver((entries) => {
@@ -71,27 +67,6 @@ window.addEventListener("scroll", () => {
         navContainer.classList.add("py-6");
         navContainer.classList.remove("py-3");
     }
-
-
-
-
-    // Blur progresivo
-    navbar.style.backdropFilter = `blur(${progress * 15}px)`;
-    navbar.style.backgroundColor = `rgba(58,74,63,${progress * 0.5})`;
-    // Cambiar color del texto
-    if (progress > 0.99) {
-        navIcons.forEach(icon => {
-            icon.classList.remove("fill-gray-200,");
-            icon.classList.add("fill-gray-100 ");
-            icon.classList.add("hover:fill-gray-100");
-        });
-    } else {
-        navIcons.forEach(icon => {
-            icon.classList.remove("fill-black");
-            icon.classList.add("fill-gray-200");
-        });
-    }
-
 
     // Reducir tamaño del navbar y logo
     const scale = 1 - (progress * 0.25);
@@ -249,14 +224,11 @@ document.addEventListener("DOMContentLoaded", () => {
         imagen.className = "w-full h-full object-cover rounded-xl";
         contenedor.appendChild(imagen);
     });
-    if (producto.img_footer) {
-        const imagenFooter = document.createElement("img");
-        imagenFooter.src = producto.img_footer; // Aquí va la ruta de la imagen
-        imagenFooter.className = "w-full h-full object-cover rounded-xl";
-    
-        // Selecciona el footer y lo agrega dentro, o reemplaza el contenido existente
-        const footer = document.getElementById("img_footer");
-        footer.appendChild(imagenFooter);
-    }
+
+    const footerImg = document.querySelector("#img_footer img");
+
+if (producto.img_footer && footerImg) {
+    footerImg.src = producto.img_footer;
+}
 
 });
